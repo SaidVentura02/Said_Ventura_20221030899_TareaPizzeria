@@ -97,7 +97,7 @@
                         </div>
                         <!--Boton de compra-->
                         <div class="py-2 d-flex justify-content-center">
-                            <button type="button" class="btn btn-success"><i class="bi bi-piggy-bank-fill"></i>Realizar compra</button>
+                            <button type="button" class="btn btn-success"><i class="bi bi-piggy-bank-fill px-1"></i>Realizar compra</button>
                         </div>
 
                     </form>

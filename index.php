@@ -72,7 +72,7 @@
                 <div class="container">
                     <h2>Conoce nuestras especialidades del día</h2>
                     <div class="row">
-                        <div class="col-12 col-md-4">
+                        <div class="col-12 col-md-4 py-2">
                             <div class="card">
                                 <img class="img-fluid img-inicio" src="./recursos/pizza-margarita.jpg" alt="pizza margarita">
                                 <div class="card-body">
@@ -80,7 +80,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-12 col-md-4">
+                        <div class="col-12 col-md-4 py-2">
                             <div class="card">
                                 <img class="img-fluid img-inicio" src="./recursos/trufada-napolitana.jpg" alt="pizza trufada napolitana">
                                 <div class="card-body">
@@ -88,7 +88,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-12 col-md-4">
+                        <div class="col-12 col-md-4 py-2">
                             <div class="card">
                                 <img class="img-fluid img-inicio" src="./recursos/carnivora-suprema.webp" alt="pizza carnivora">
                                 <div class="card-body">
@@ -104,7 +104,7 @@
                 <div class="container">
                     <h2>Promociones del día</h2>
                     <div class="row">
-                        <div class="col-12 col-md-4">
+                        <div class="col-12 col-md-4 py-2">
                             <div class="card">
                                 <div><span class="badge rounded-pill bg-warning m-2 fs-6">Promoción</span></div>
                                 <img class="img-fluid img-inicio" src="./recursos/cuatro-quesos.webp" alt="pizza cuatro quesos">
@@ -117,7 +117,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-12 col-md-4">
+                        <div class="col-12 col-md-4 py-2">
                             <div class="card">
                                 <div><span class="badge rounded-pill bg-danger m-2 fs-6">50% DE DESCUENTO</span></div>
                                 <img class="img-fluid img-inicio" src="./recursos/hawaiana.webp" alt="pizza hawaiana">
@@ -136,7 +136,7 @@
             <section class="py-3" id="seccion-testimonios">
                 <div class="container">
                     <h2>Descubre que opinan nuestros clientes</h2>
-                    <div class="card">
+                    <div class="card py-2">
                         <div class="card-body">
                             <p class="fs-4">
                                 "Todo mi familia disfruta de comer en Bella Napoli.
@@ -145,7 +145,7 @@
                             </p>
                         </div>
                     </div>
-                    <div class="card">
+                    <div class="card py-2">
                         <div class="card-body">
                             <p class="fs-4">
                                 "Siempre disfruto de comer en Bella Napoli, amo su

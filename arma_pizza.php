@@ -132,6 +132,7 @@
                                 </div>
                             </div>
                         </div>
+                        <!--Boton pedido de pizza-->
                         <div class="py-2 d-flex justify-content-center">
                             <button type="button" class="btn btn-success"><i class="bi bi-basket px-1"></i>Realizar pedido</button>
                         </div>

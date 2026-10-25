@@ -1,39 +1,36 @@
 <?php 
     $pizzaClasicas = [
-        ["imagen" => "recursos\pizza-margarita.jpg", "nombre" => "Margarita", "ingredientes" => "", "precioP" => "", "precioM" => "", "precioF" => "", "precioG" => ""],
-        ["imagen" => "recursos\pepperoni.jfif", "nombre" => "Pepperoni", "ingredientes" => "", "precioP" => "", "precioM" => "", "precioF" => "", "precioG" => ""],
-        ["imagen" => "recursos\hawaiana.webp", "nombre" => "Hawaiana", "ingredientes" => "", "precioP" => "", "precioM" => "", "precioF" => "", "precioG" => ""],
-        ["imagen" => "recursos\cuatro-quesos.webp", "nombre" => "Quatro quesos", "ingredientes" => "", "precioP" => "", "precioM" => "", "precioF" => "", "precioG" => ""],
+        ["imagen" => "recursos\pizza-margarita.jpg", "nombre" => "Margarita", "ingredientes" => "Hojas de albahaca", "precioP" => 85.00, "precioM" => 105.00, "precioF" => 125.00, "precioG" => 155.00],
+        ["imagen" => "recursos\pepperoni.jfif", "nombre" => "Pepperoni", "ingredientes" => "Rodajas de pepperoni", "precioP" => 99.00, "precioM" => 119.00, "precioF" => 139.00, "precioG" => 169.00],
+        ["imagen" => "recursos\hawaiana.webp", "nombre" => "Hawaiana", "ingredientes" => "Piña y jámon", "precioP" => 105.00, "precioM" => 125.00, "precioF" => 145.00, "precioG" => 175.00],
+        ["imagen" => "recursos\cuatro-quesos.webp", "nombre" => "Quatro quesos", "ingredientes" => "Mozzarella, gorgonzola, fontina y parmesano", "precioP" => 109.00, "precioM" => 129.00, "precioF" => 149.00, "precioG" => 179.00],
     ];
 
     $pizzaGourment = [
-        ["imagen" => "recursos\prosciutto-di-parma.jfif", "nombre" => "Prosciutto di Parma", "ingredientes" => "", "precioP" => "", "precioM" => "", "precioF" => "", "precioG" => ""],
-        ["imagen" => "recursos\\trufada-napolitana.jpg", "nombre" => "Trufada Napolitana", "ingredientes" => "", "precioP" => "", "precioM" => "", "precioF" => "", "precioG" => ""],
-        ["imagen" => "recursos\\frutti-di-mare.jpg", "nombre" => "Frutti di Mare", "ingredientes" => "", "precioP" => "", "precioM" => "", "precioF" => "", "precioG" => ""],
-        ["imagen" => "recursos\carnivora-suprema.webp", "nombre" => "Carnivora Suprema", "ingredientes" => "", "precioP" => "", "precioM" => "", "precioF" => "", "precioG" => ""],
+        ["imagen" => "recursos\prosciutto-di-parma.jfif", "nombre" => "Prosciutto di Parma", "ingredientes" => "Jamón prosciutto di Parma", "precioP" => 110.00, "precioM" => 130.00, "precioF" => 150.00, "precioG" => 180.00],
+        ["imagen" => "recursos\\trufada-napolitana.jpg", "nombre" => "Trufada Napolitana", "ingredientes" => "Toques de trufa", "precioP" => 125.00, "precioM" => 145.00, "precioF" => 165.00, "precioG" => 195.00],
+        ["imagen" => "recursos\\frutti-di-mare.jpg", "nombre" => "Frutti di Mare", "ingredientes" => "Hierbas y mariscos variados", "precioP" => 132.00, "precioM" => 152.00, "precioF" => 172.00, "precioG" => 202.00],
+        ["imagen" => "recursos\carnivora-suprema.webp", "nombre" => "Carnivora Suprema", "ingredientes" => "Embutidos y carnes variadas", "precioP" => 127.00, "precioM" => 147.00, "precioF" => 167.00, "precioG" => 197.00],
     ];
 
     $especialidades = [
-        ["imagen" => "recursos\calzone-res.jpg", "nombre" => "Calzone de Carnes", "ingredientes" => "", "precioP" => "", "precioM" => "", "precioF" => "", "precioG" => ""],
-        ["imagen" => "recursos\calzone-vegetariano.webp", "nombre" => "Calzone Vegetariano", "ingredientes" => "", "precioP" => "", "precioM" => "", "precioF" => "", "precioG" => ""],
-        ["imagen" => "recursos\\focaccia-romero.webp", "nombre" => "Focaccia con Romero", "ingredientes" => "", "precioP" => "", "precioM" => "", "precioF" => "", "precioG" => ""],
-        ["imagen" => "recursos\cannelloni.webp", "nombre" => "Cannelloni", "ingredientes" => "", "precioP" => "", "precioM" => "", "precioF" => "", "precioG" => ""],
+        ["imagen" => "recursos\calzone-res.jpg", "nombre" => "Calzone de Carnes", "ingredientes" => "Queso, tocino y carne sazonada", "precio" => 90.00],
+        ["imagen" => "recursos\calzone-vegetariano.webp", "nombre" => "Calzone Vegetariano", "ingredientes" => "Queso y vegetales variado", "precio" => 90.00],
+        ["imagen" => "recursos\\focaccia-romero.webp", "nombre" => "Focaccia con Romero", "ingredientes" => "Romero, ajo y vegetales variados", "precio" => 135.00],
+        ["imagen" => "recursos\cannelloni.webp", "nombre" => "Cannelloni", "ingredientes" => "Carne sazonada, queso y pasta", "precio" => 110.00],
     ];
 
     $bebidas = [
-        ["imagen" => "recursos\agua.jfif", "nombre" => "Agua", "precioP" => ""],
-        ["imagen" => "recursos\\refrescos.jpg", "nombre" => "Refresco", "precio" => ""],
-        ["imagen" => "recursos\jugos-naturales.jpg", "nombre" => "Jugo natural", "precio" => ""]
+        ["imagen" => "recursos\agua.jfif", "nombre" => "Agua", "precio" => 25.00],
+        ["imagen" => "recursos\\refrescos.jpg", "nombre" => "Refresco", "precio" => 29.00],
+        ["imagen" => "recursos\jugos-naturales.jpg", "nombre" => "Jugo natural", "precio" => 32.00]
     ];
 
     $postres = [
-        ["imagen" => "recursos\\tiramisu.jpg", "nombre" => "Tiramisu casero", "precio" => ""],
-        ["imagen" => "recursos\cannelloni.webp", "nombre" => "Cannoli sicilianos", "precio" => ""]
+        ["imagen" => "recursos\\tiramisu.jpg", "nombre" => "Tiramisu casero", "precio" => 120.00],
+        ["imagen" => "recursos\cannoli.jfif", "nombre" => "Cannoli sicilianos", "precio" => 65.00]
     ];
-
-
 ?>
-
 
 <!DOCTYPE html>
 <html lang="es">
@@ -73,13 +70,13 @@
                 <div class="container">
                     <h2>Pizzas clásicas</h2>
                     <div class="row">
-                        
                         <?php foreach ($pizzaClasicas as $clasica): ?>
                         <div class="col-12 col-md-4 py-2">
                             <div class="card">
                                 <img class="img-fluid img-inicio" src="<?= $clasica["imagen"] ?>" alt="pizza">
                                 <div class="card-body">
                                     <h3><?= $clasica["nombre"] ?></h3>
+                                    <p><?= $clasica["ingredientes"] ?></p>
                                     <div class="table-responsive">
                                         <table class="table table-striped-columns border">
                                         <thead class="table-dark">
@@ -91,19 +88,19 @@
                                         <tbody>
                                             <tr>
                                                 <td>Personal</td>
-                                                <td></td>
+                                                <td>L.<?= number_format($clasica["precioP"],2) ?></td>
                                             </tr>
                                             <tr>
                                                 <td>Mediana</td>
-                                                <td></td>
+                                                <td>L.<?= number_format($clasica["precioM"],2) ?></td>
                                             </tr>
                                             <tr>
                                                 <td>Familiar</td>
-                                                <td></td>
+                                                <td>L.<?= number_format($clasica["precioF"],2) ?></td>
                                             </tr>
                                             <tr>
                                                 <td>Gigante</td>
-                                                <td></td>
+                                                <td>L.<?= number_format($clasica["precioG"],2) ?></td>
                                             </tr>
                                         </tbody>
                                         </table>
@@ -112,7 +109,6 @@
                             </div>
                         </div>
                         <?php endforeach; ?>
-
                     </div>
                 </div>
             </section>
@@ -122,13 +118,13 @@
                 <div class="container">
                     <h2>Pizzas gourmet</h2>
                     <div class="row">
-                        
                         <?php foreach ($pizzaGourment as $gourmet): ?>
                         <div class="col-12 col-md-4 py-2">
                             <div class="card">
                                 <img class="img-fluid img-inicio" src="<?= $gourmet["imagen"] ?>" alt="pizza">
                                 <div class="card-body">
                                     <h3><?= $gourmet["nombre"] ?></h3>
+                                    <p><?= $gourmet["ingredientes"] ?></p>
                                     <div class="table-responsive">
                                         <table class="table table-striped-columns border">
                                         <thead class="table-dark">
@@ -140,19 +136,19 @@
                                         <tbody>
                                             <tr>
                                                 <td>Personal</td>
-                                                <td></td>
+                                                <td>L.<?= number_format($gourmet["precioP"],2) ?></td>
                                             </tr>
                                             <tr>
                                                 <td>Mediana</td>
-                                                <td></td>
+                                                <td>L.<?= number_format($gourmet["precioM"],2) ?></td>
                                             </tr>
                                             <tr>
                                                 <td>Familiar</td>
-                                                <td></td>
+                                                <td>L.<?= number_format($gourmet["precioF"],2) ?></td>
                                             </tr>
                                             <tr>
                                                 <td>Gigante</td>
-                                                <td></td>
+                                                <td>L.<?= number_format($gourmet["precioG"],2) ?></td>
                                             </tr>
                                         </tbody>
                                         </table>
@@ -160,8 +156,7 @@
                                 </div>
                             </div>
                         </div>
-                        <?php endforeach; ?>
-                        
+                        <?php endforeach; ?> 
                     </div>
                 </div>
             </section>
@@ -170,20 +165,19 @@
             <section class="py-2">
                 <div class="container">
                     <h2>Calzones y especialidades al horno</h2>
-                    <div class="row">
-                        
+                    <div class="row"> 
                        <?php foreach ($especialidades as $especial): ?>
                             <div class="col-12 col-md-4 py-2">
                                 <div class="card">
                                     <img class="img-fluid img-inicio" src="<?= $especial["imagen"] ?>" alt="pizza">
                                     <div class="card-body">
                                         <h3><?= $especial["nombre"] ?></h3>
-                                        
+                                        <p><?= $especial["ingredientes"] ?></p>
+                                        <p>Precio : L.<?= number_format($especial["precio"],2) ?></p>
                                     </div>
                                 </div>
                             </div>
                         <?php endforeach; ?>
-                    
                     </div>
                 </div>
             </section>
@@ -192,20 +186,18 @@
             <section class="py-2">
                 <div class="container">
                     <h2>Bebidas</h2>
-                    <div class="row">
-                        
+                    <div class="row"> 
                        <?php foreach ($bebidas as $bebida): ?>
                             <div class="col-12 col-md-4 py-2">
                                 <div class="card">
                                     <img class="img-fluid img-inicio" src="<?= $bebida["imagen"] ?>" alt="pizza">
                                     <div class="card-body">
                                         <h3><?= $bebida["nombre"] ?></h3>
-                                        
+                                        <p>Precio : L.<?= number_format($bebida["precio"],2) ?></p>
                                     </div>
                                 </div>
                             </div>
                         <?php endforeach; ?>
-
                     </div>
                 </div>
             </section>
@@ -214,20 +206,18 @@
             <section class="py-2">
                 <div class="container">
                     <h2>Postres</h2>
-                    <div class="row">
-                        
+                    <div class="row"> 
                         <?php foreach ($postres as $postre): ?>
                             <div class="col-12 col-md-4 py-2">
                                 <div class="card">
                                     <img class="img-fluid img-inicio" src="<?= $postre["imagen"] ?>" alt="pizza">
                                     <div class="card-body">
                                         <h3><?= $postre["nombre"] ?></h3>
-                                        
+                                        <p>Precio : L.<?= number_format($postre["precio"],2) ?></p>
                                     </div>
                                 </div>
                             </div>
                         <?php endforeach; ?>
-                        
                     </div>
                 </div>
             </section>

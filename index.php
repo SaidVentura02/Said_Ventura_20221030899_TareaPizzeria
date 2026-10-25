@@ -74,7 +74,7 @@
                     <div class="row">
                         <div class="col-12 col-md-4">
                             <div class="card">
-                                <img class="img-fluid img-inicio" width="1200px" height="799px" src="./recursos/pizza-margarita.jpg" alt="pizza margarita">
+                                <img class="img-fluid img-inicio" src="./recursos/pizza-margarita.jpg" alt="pizza margarita">
                                 <div class="card-body">
                                     <h3>Pizza margarita</h3>
                                 </div>
@@ -82,7 +82,7 @@
                         </div>
                         <div class="col-12 col-md-4">
                             <div class="card">
-                                <img class="img-fluid img-inicio" width="1200px" height="799px" src="./recursos/trufada-napolitana.jpg" alt="pizza trufada napolitana">
+                                <img class="img-fluid img-inicio" src="./recursos/trufada-napolitana.jpg" alt="pizza trufada napolitana">
                                 <div class="card-body">
                                     <h3>Trufada Napolitana</h3>
                                 </div>

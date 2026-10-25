@@ -1,3 +1,40 @@
+<?php 
+    $pizzaClasicas = [
+        ["imagen" => "recursos\pizza-margarita.jpg", "nombre" => "Margarita", "ingredientes" => "", "precioP" => "", "precioM" => "", "precioF" => "", "precioG" => ""],
+        ["imagen" => "recursos\pepperoni.jfif", "nombre" => "Pepperoni", "ingredientes" => "", "precioP" => "", "precioM" => "", "precioF" => "", "precioG" => ""],
+        ["imagen" => "recursos\hawaiana.webp", "nombre" => "Hawaiana", "ingredientes" => "", "precioP" => "", "precioM" => "", "precioF" => "", "precioG" => ""],
+        ["imagen" => "recursos\cuatro-quesos.webp", "nombre" => "Quatro quesos", "ingredientes" => "", "precioP" => "", "precioM" => "", "precioF" => "", "precioG" => ""],
+    ];
+
+    $pizzaGourment = [
+        ["imagen" => "recursos\prosciutto-di-parma.jfif", "nombre" => "Prosciutto di Parma", "ingredientes" => "", "precioP" => "", "precioM" => "", "precioF" => "", "precioG" => ""],
+        ["imagen" => "recursos\\trufada-napolitana.jpg", "nombre" => "Trufada Napolitana", "ingredientes" => "", "precioP" => "", "precioM" => "", "precioF" => "", "precioG" => ""],
+        ["imagen" => "recursos\\frutti-di-mare.jpg", "nombre" => "Frutti di Mare", "ingredientes" => "", "precioP" => "", "precioM" => "", "precioF" => "", "precioG" => ""],
+        ["imagen" => "recursos\carnivora-suprema.webp", "nombre" => "Carnivora Suprema", "ingredientes" => "", "precioP" => "", "precioM" => "", "precioF" => "", "precioG" => ""],
+    ];
+
+    $especialidades = [
+        ["imagen" => "recursos\calzone-res.jpg", "nombre" => "Calzone de Carnes", "ingredientes" => "", "precioP" => "", "precioM" => "", "precioF" => "", "precioG" => ""],
+        ["imagen" => "recursos\calzone-vegetariano.webp", "nombre" => "Calzone Vegetariano", "ingredientes" => "", "precioP" => "", "precioM" => "", "precioF" => "", "precioG" => ""],
+        ["imagen" => "recursos\\focaccia-romero.webp", "nombre" => "Focaccia con Romero", "ingredientes" => "", "precioP" => "", "precioM" => "", "precioF" => "", "precioG" => ""],
+        ["imagen" => "recursos\cannelloni.webp", "nombre" => "Cannelloni", "ingredientes" => "", "precioP" => "", "precioM" => "", "precioF" => "", "precioG" => ""],
+    ];
+
+    $bebidas = [
+        ["imagen" => "recursos\agua.jfif", "nombre" => "Agua", "precioP" => ""],
+        ["imagen" => "recursos\\refrescos.jpg", "nombre" => "Refresco", "precio" => ""],
+        ["imagen" => "recursos\jugos-naturales.jpg", "nombre" => "Jugo natural", "precio" => ""]
+    ];
+
+    $postres = [
+        ["imagen" => "recursos\\tiramisu.jpg", "nombre" => "Tiramisu casero", "precio" => ""],
+        ["imagen" => "recursos\cannelloni.webp", "nombre" => "Cannoli sicilianos", "precio" => ""]
+    ];
+
+
+?>
+
+
 <!DOCTYPE html>
 <html lang="es">
     <head>
@@ -36,38 +73,46 @@
                 <div class="container">
                     <h2>Pizzas clásicas</h2>
                     <div class="row">
+                        
+                        <?php foreach ($pizzaClasicas as $clasica): ?>
                         <div class="col-12 col-md-4 py-2">
                             <div class="card">
-                                <img class="img-fluid" src="#" alt="pizza">
+                                <img class="img-fluid img-inicio" src="<?= $clasica["imagen"] ?>" alt="pizza">
                                 <div class="card-body">
-                                    <h3>Pizza 1</h3>
+                                    <h3><?= $clasica["nombre"] ?></h3>
+                                    <div class="table-responsive">
+                                        <table class="table table-striped-columns border">
+                                        <thead class="table-dark">
+                                            <tr>
+                                            <th scope="col">Tamaño</th>
+                                            <th scope="col">Precio</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>Personal</td>
+                                                <td></td>
+                                            </tr>
+                                            <tr>
+                                                <td>Mediana</td>
+                                                <td></td>
+                                            </tr>
+                                            <tr>
+                                                <td>Familiar</td>
+                                                <td></td>
+                                            </tr>
+                                            <tr>
+                                                <td>Gigante</td>
+                                                <td></td>
+                                            </tr>
+                                        </tbody>
+                                        </table>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                        <div class="col-12 col-md-4 py-2">
-                            <div class="card">
-                                <img class="img-fluid" src="#" alt="pizza">
-                                <div class="card-body">
-                                    <h3>Pizza 1</h3>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-12 col-md-4 py-2">
-                            <div class="card">
-                                <img class="img-fluid" src="#" alt="pizza">
-                                <div class="card-body">
-                                    <h3>Pizza 1</h3>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-12 col-md-4 py-2">
-                            <div class="card">
-                                <img class="img-fluid" src="#" alt="pizza">
-                                <div class="card-body">
-                                    <h3>Pizza 1</h3>
-                                </div>
-                            </div>
-                        </div>
+                        <?php endforeach; ?>
+
                     </div>
                 </div>
             </section>
@@ -77,38 +122,46 @@
                 <div class="container">
                     <h2>Pizzas gourmet</h2>
                     <div class="row">
+                        
+                        <?php foreach ($pizzaGourment as $gourmet): ?>
                         <div class="col-12 col-md-4 py-2">
                             <div class="card">
-                                <img class="img-fluid" src="#" alt="pizza">
+                                <img class="img-fluid img-inicio" src="<?= $gourmet["imagen"] ?>" alt="pizza">
                                 <div class="card-body">
-                                    <h3>Pizza 1</h3>
+                                    <h3><?= $gourmet["nombre"] ?></h3>
+                                    <div class="table-responsive">
+                                        <table class="table table-striped-columns border">
+                                        <thead class="table-dark">
+                                            <tr>
+                                            <th scope="col">Tamaño</th>
+                                            <th scope="col">Precio</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>Personal</td>
+                                                <td></td>
+                                            </tr>
+                                            <tr>
+                                                <td>Mediana</td>
+                                                <td></td>
+                                            </tr>
+                                            <tr>
+                                                <td>Familiar</td>
+                                                <td></td>
+                                            </tr>
+                                            <tr>
+                                                <td>Gigante</td>
+                                                <td></td>
+                                            </tr>
+                                        </tbody>
+                                        </table>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                        <div class="col-12 col-md-4 py-2">
-                            <div class="card">
-                                <img class="img-fluid" src="#" alt="pizza">
-                                <div class="card-body">
-                                    <h3>Pizza 1</h3>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-12 col-md-4 py-2">
-                            <div class="card">
-                                <img class="img-fluid" src="#" alt="pizza">
-                                <div class="card-body">
-                                    <h3>Pizza 1</h3>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-12 col-md-4 py-2">
-                            <div class="card">
-                                <img class="img-fluid" src="#" alt="pizza">
-                                <div class="card-body">
-                                    <h3>Pizza 1</h3>
-                                </div>
-                            </div>
-                        </div>
+                        <?php endforeach; ?>
+                        
                     </div>
                 </div>
             </section>
@@ -118,38 +171,19 @@
                 <div class="container">
                     <h2>Calzones y especialidades al horno</h2>
                     <div class="row">
-                        <div class="col-12 col-md-4 py-2">
-                            <div class="card">
-                                <img class="img-fluid" src="#" alt="pizza">
-                                <div class="card-body">
-                                    <h3>Pizza 1</h3>
+                        
+                       <?php foreach ($especialidades as $especial): ?>
+                            <div class="col-12 col-md-4 py-2">
+                                <div class="card">
+                                    <img class="img-fluid img-inicio" src="<?= $especial["imagen"] ?>" alt="pizza">
+                                    <div class="card-body">
+                                        <h3><?= $especial["nombre"] ?></h3>
+                                        
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="col-12 col-md-4 py-2">
-                            <div class="card">
-                                <img class="img-fluid" src="#" alt="pizza">
-                                <div class="card-body">
-                                    <h3>Pizza 1</h3>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-12 col-md-4 py-2">
-                            <div class="card">
-                                <img class="img-fluid" src="#" alt="pizza">
-                                <div class="card-body">
-                                    <h3>Pizza 1</h3>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-12 col-md-4 py-2">
-                            <div class="card">
-                                <img class="img-fluid" src="#" alt="pizza">
-                                <div class="card-body">
-                                    <h3>Pizza 1</h3>
-                                </div>
-                            </div>
-                        </div>
+                        <?php endforeach; ?>
+                    
                     </div>
                 </div>
             </section>
@@ -159,30 +193,19 @@
                 <div class="container">
                     <h2>Bebidas</h2>
                     <div class="row">
-                        <div class="col-12 col-md-4 py-2">
-                            <div class="card">
-                                <img class="img-fluid" src="#" alt="bebida">
-                                <div class="card-body">
-                                    <h3>Bebida</h3>
+                        
+                       <?php foreach ($bebidas as $bebida): ?>
+                            <div class="col-12 col-md-4 py-2">
+                                <div class="card">
+                                    <img class="img-fluid img-inicio" src="<?= $bebida["imagen"] ?>" alt="pizza">
+                                    <div class="card-body">
+                                        <h3><?= $bebida["nombre"] ?></h3>
+                                        
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="col-12 col-md-4 py-2">
-                            <div class="card">
-                                <img class="img-fluid" src="#" alt="bebida">
-                                <div class="card-body">
-                                    <h3>Bebida</h3>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-12 col-md-4 py-2">
-                            <div class="card">
-                                <img class="img-fluid" src="#" alt="bebida">
-                                <div class="card-body">
-                                    <h3>Bebida</h3>
-                                </div>
-                            </div>
-                        </div>
+                        <?php endforeach; ?>
+
                     </div>
                 </div>
             </section>
@@ -192,22 +215,19 @@
                 <div class="container">
                     <h2>Postres</h2>
                     <div class="row">
-                        <div class="col-12 col-md-4 py-2">
-                            <div class="card">
-                                <img class="img-fluid" src="#" alt="postre">
-                                <div class="card-body">
-                                    <h3>Postre</h3>
+                        
+                        <?php foreach ($postres as $postre): ?>
+                            <div class="col-12 col-md-4 py-2">
+                                <div class="card">
+                                    <img class="img-fluid img-inicio" src="<?= $postre["imagen"] ?>" alt="pizza">
+                                    <div class="card-body">
+                                        <h3><?= $postre["nombre"] ?></h3>
+                                        
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="col-12 col-md-4 py-2">
-                            <div class="card">
-                                <img class="img-fluid" src="#" alt="postre">
-                                <div class="card-body">
-                                    <h3>Postre</h3>
-                                </div>
-                            </div>
-                        </div>
+                        <?php endforeach; ?>
+                        
                     </div>
                 </div>
             </section>

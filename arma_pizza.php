@@ -6,12 +6,13 @@
         <title>Arma tu pizza</title>
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+        <link rel="stylesheet" type="text/css" href="./css/estilos_pizzeria.css">
     </head>
 
     <body>
 
         <!--Barra de navegación-->
-        <nav class="navbar navbar-expand-lg py-2 bg-danger">
+        <nav class="navbar navbar-expand-lg py-2 seccion-borde">
             <div class="container-fluid">
                 <a class="navbar-brand fw-bold text-light">Bella Napoli</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#seccion-navbar" aria-controls="seccion-navbar"  aria-expanded="false" aria-label="Toggle navigation">
@@ -141,7 +142,7 @@
         </main>
 
         <!--Footer-->
-        <footer class="py-5 mt-auto border-top text-light bg-danger">
+        <footer class="py-5 mt-auto border-top text-light seccion-borde">
             <div class="container">
                 <div class="row g-4">
                     <div class="col-12 col-md-4">
@@ -154,9 +155,9 @@
                     <div class="col-12 col-md-4">
                         <h4>Nuestras redes sociales</h4>
                         <ul>
-                            <li><i class="bi bi-instagram"></i><a class="text-light mx-2" href="#">Instagram</a></li>
-                            <li><i class="bi bi-facebook"></i><a class="text-light mx-2" href="#">Facebook</a></li>
-                            <li><i class="bi bi-youtube"></i><a class="text-light mx-2" href="#">Youtube</a></li>
+                            <li><i class="bi bi-instagram"></i><a class="text-light mx-2" href="#">Bellanapolihn.ig</a></li>
+                            <li><i class="bi bi-facebook"></i><a class="text-light mx-2" href="#">Bellanapolihn.fb</a></li>
+                            <li><i class="bi bi-youtube"></i><a class="text-light mx-2" href="#">Bellanapolihn.yt</a></li>
                         </ul>
                     </div>
                 </div>

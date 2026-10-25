@@ -6,12 +6,13 @@
         <title>Inicio Bella Napoli</title>
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+        <link rel="stylesheet" type="text/css" href="./css/estilos_pizzeria.css">
     </head>
 
     <body>
 
         <!--Barra de navegación-->
-        <nav class="navbar navbar-expand-lg py-2 bg-danger">
+        <nav class="navbar navbar-expand-lg py-2 seccion-borde">
             <div class="container-fluid">
                 <a class="navbar-brand fw-bold text-light">Bella Napoli</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#seccion-navbar" aria-controls="seccion-navbar"  aria-expanded="false" aria-label="Toggle navigation">
@@ -30,19 +31,19 @@
         </nav>
 
         <!--Header o Hero banner-->
-        <header class="py-2 bg-dark">
+        <header class="py-3" id="hero-body">
             <div class="container">
                 <div class="row">
-                    <div class="col-12 col-md-4 bg-success">
+                    <div class="col-12 col-md-4" id="hero-verde">
                         <div>
                             <h1>Difruta del tradicional sabor italiano!</h1>
                             <p>
                                 Somo una prestigiosa cadena de restaurantes dedicados a la elaboración de
-                                pizzasde manera tradicional a horno de leña. 
+                                pizzas de manera tradicional a horno de leña. 
                             </p>
                         </div>
                     </div>
-                    <div class="col-12 col-md-4 bg-light">
+                    <div class="col-12 col-md-4" id="hero-blanco">
                         <div>
                             <h1>Ahora más cerca de ti!</h1>
                                 <p>
@@ -51,7 +52,7 @@
                                 </p>
                         </div>
                     </div>
-                    <div class="col-12 col-md-4 bg-danger">
+                    <div class="col-12 col-md-4" id="hero-rojo">
                         <div>
                             <h1>Arma tu pizza a tu gusto!</h1>
                                 <p>
@@ -73,25 +74,25 @@
                     <div class="row">
                         <div class="col-12 col-md-4">
                             <div class="card">
-                                <img class="img-fluid" src="#" alt="pizza-1">
+                                <img class="img-fluid img-inicio" width="1200px" height="799px" src="./recursos/pizza-margarita.jpg" alt="pizza margarita">
                                 <div class="card-body">
-                                    <h3>Pizza 1</h3>
+                                    <h3>Pizza margarita</h3>
                                 </div>
                             </div>
                         </div>
                         <div class="col-12 col-md-4">
                             <div class="card">
-                                <img class="img-fluid" src="#" alt="pizza-2">
+                                <img class="img-fluid img-inicio" width="1200px" height="799px" src="./recursos/trufada-napolitana.jpg" alt="pizza trufada napolitana">
                                 <div class="card-body">
-                                    <h3>Pizza 2</h3>
+                                    <h3>Trufada Napolitana</h3>
                                 </div>
                             </div>
                         </div>
                         <div class="col-12 col-md-4">
                             <div class="card">
-                                <img class="img-fluid" src="#" alt="pizza-3">
+                                <img class="img-fluid img-inicio" src="./recursos/carnivora-suprema.webp" alt="pizza carnivora">
                                 <div class="card-body">
-                                    <h3>Pizza 3</h3>
+                                    <h3>Carnivora Suprema</h3>
                                 </div>
                             </div>
                         </div>
@@ -105,24 +106,25 @@
                     <div class="row">
                         <div class="col-12 col-md-4">
                             <div class="card">
-                                <img class="img-fluid" src="#" alt="pizza-1">
+                                <div><span class="badge rounded-pill bg-warning m-2 fs-6">Promoción</span></div>
+                                <img class="img-fluid img-inicio" src="./recursos/cuatro-quesos.webp" alt="pizza cuatro quesos">
                                 <div class="card-body">
-                                    <h3>Promocion 1</h3>
+                                    <h3>Pizza 4 quesos-mediana</h3>
                                     <ul>
-                                        <li>Elemento 1</li>
-                                        <li>Elemento 2</li>
+                                        <li>Cuatro quesos tamaño mediano</li>
+                                        <li>Incluye 4 refrescos</li>
                                     </ul>
                                 </div>
                             </div>
                         </div>
                         <div class="col-12 col-md-4">
                             <div class="card">
-                                <img class="img-fluid" src="#" alt="pizza-2">
+                                <div><span class="badge rounded-pill bg-danger m-2 fs-6">50% DE DESCUENTO</span></div>
+                                <img class="img-fluid img-inicio" src="./recursos/hawaiana.webp" alt="pizza hawaiana">
                                 <div class="card-body">
-                                    <h3>Promocion 2</h3>
+                                    <h3>Pizza hawaiana-familiar</h3>
                                     <ul>
-                                        <li>Elemento 1</li>
-                                        <li>Elemento 2</li>
+                                        <li>Hawaiana tamaño familiar a mitad de precio</li>
                                     </ul>
                                 </div>
                             </div>
@@ -136,12 +138,21 @@
                     <h2>Descubre que opinan nuestros clientes</h2>
                     <div class="card">
                         <div class="card-body">
-                            <h4>Testimonio 1</h4>
+                            <p class="fs-4">
+                                "Todo mi familia disfruta de comer en Bella Napoli.
+                                La comida es deliciosa, y la atención del personal
+                                es la mejor."
+                            </p>
                         </div>
                     </div>
                     <div class="card">
                         <div class="card-body">
-                            <h4>Testimonio 2</h4>
+                            <p class="fs-4">
+                                "Siempre disfruto de comer en Bella Napoli, amo su
+                                pizza y el toque tradicional la vuelve mil veces mejor
+                                que otros restaurante de pizza.
+                                Siempre que hay fiestas o reuniones recomiendo venir a Bella Napoli."
+                            </p>
                         </div>
                     </div>
                 </div>
@@ -150,7 +161,7 @@
 
 
         <!--Footer-->
-        <footer class="py-5 mt-auto border-top text-light bg-danger">
+        <footer class="py-5 mt-auto border-top text-light seccion-borde">
             <div class="container">
                 <div class="row g-4">
                     <div class="col-12 col-md-4">
@@ -163,9 +174,9 @@
                     <div class="col-12 col-md-4">
                         <h4>Nuestras redes sociales</h4>
                         <ul>
-                            <li><i class="bi bi-instagram"></i><a class="text-light mx-2" href="#">Instagram</a></li>
-                            <li><i class="bi bi-facebook"></i><a class="text-light mx-2" href="#">Facebook</a></li>
-                            <li><i class="bi bi-youtube"></i><a class="text-light mx-2" href="#">Youtube</a></li>
+                            <li><i class="bi bi-instagram"></i><a class="text-light mx-2" href="#">Bellanapolihn.ig</a></li>
+                            <li><i class="bi bi-facebook"></i><a class="text-light mx-2" href="#">Bellanapolihn.fb</a></li>
+                            <li><i class="bi bi-youtube"></i><a class="text-light mx-2" href="#">Bellanapolihn.yt</a></li>
                         </ul>
                     </div>
                 </div>

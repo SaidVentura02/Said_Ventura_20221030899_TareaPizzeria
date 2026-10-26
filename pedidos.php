@@ -11,7 +11,7 @@
    $detalles = htmlspecialchars(trim($_POST['inputProducto'] ?? ''), ENT_QUOTES, 'UTF-8');
 
    $cantidad = intval(htmlspecialchars(trim($_POST['inputCantidad'] ?? ''), ENT_QUOTES, 'UTF-8'));
-   $entrega = htmlspecialchars(trim($_POST['inputEntrega'] ?? ''), ENT_QUOTES, 'UTF-8');
+   $precioEntrega = intval(htmlspecialchars(trim($_POST['inputEntrega'] ?? ''), ENT_QUOTES, 'UTF-8'));
    $pago = htmlspecialchars(trim($_POST['inputPago'] ?? ''), ENT_QUOTES, 'UTF-8');
 
    $_SESSION['iniciado'] = true;
@@ -22,12 +22,15 @@
     $precio = intval($arrayDetalles[1]);
 
     $subtotal = $precio * $cantidad;
-    $impuestoAgregado = $subtotal * 0.15;
-    $total = $subtotal + $impuestoAgregado;
 
     if($cantidad >= 3){
-        $total = $total - ($total * 0.10);
+        $subtotal = $subtotal - ($subtotal * 0.10);
     }
+
+    $impuestoAgregado = $subtotal * 0.15;
+    $total = $subtotal + $impuestoAgregado;
+    $total = $total + $precioEntrega;
+    $total = number_format($total, 2);
     
     $cod = random_int(111, 999);
 
@@ -72,6 +75,7 @@
         </nav>
 
         <main>
+            <!--Sección del formulario de pedido-->
             <section class="py-3">
                 <div class="container p-2 border shadow-lg rounded-2">
                     <div>
@@ -90,14 +94,14 @@
                         <div class="p-2 w-50">
                             <div class="mb-3">
                                 <label for="input-rtn" class="form-label">RTN</label>
-                                <input type="text" class="form-control" name="inputRTN" id="input-rtn" minlength="14" maxlength="14" placeholder="0801XXXXXXXXXX">
+                                <input type="text" class="form-control" name="inputRTN" id="input-rtn" minlength="14" maxlength="14" placeholder="0801XXXXXXXXXX" pattern="[0-9]{14}" required>
                             </div>
                         </div>
                         <!--Telefono-->
                         <div class="p-2 w-50">
                             <div class="mb-3">
                                 <label for="input-tel" class="form-label">Número telefonico</label>
-                                <input type="text" class="form-control" name="inputTel" id="input-tel" minlength="8" maxlength="8" placeholder="996699XX" required>
+                                <input type="text" class="form-control" name="inputTel" id="input-tel" minlength="8" maxlength="8" placeholder="996699XX" pattern="[0-9]{8}" required>
                             </div>
                         </div>
                         <!--Correo electronico-->
@@ -135,6 +139,15 @@
                                     <option value="4 Quesos Mediana-129">Pizza 4 quesos mediana</option>
                                     <option value="4 Quesos Familiar-149">Pizza 4 quesos familiar</option>
                                     <option value="4 Quesos Gigante-179">Pizza 4 quesos gigante</option>
+                                    <option value="Calzone de carne-90">Calzone de carne</option>
+                                    <option value="Calzone vegetariano-90">Calzone vegetariano</option>
+                                    <option value="Focaccia con romero-135">Focaccia con romero</option>
+                                    <option value="Cannelloni-110">Cannelloni</option>
+                                    <option value="Agua-25">Agua</option>
+                                    <option value="Refresco-29">Refresco</option>
+                                    <option value="Jugo natural-32">Jugo natural</option>
+                                    <option value="Tiramisu casero-120">Tiramisu casero</option>
+                                    <option value="Cannoli sicilianos-65">Cannoli sicilianos</option>
                                 </select>
                             </div>
                         </div>
@@ -150,9 +163,9 @@
                             <div class="mb-3">
                                 <label for="input-entrega" class="form-label">Modalidad de entrega</label>
                                 <select class="form-select" name="inputEntrega" id="input-entrega" required>
-                                    <option>Para comer en restaurante</option>
-                                    <option>Para llevar</option>
-                                    <option>Envio a domicilio - costo extra de L.45.00</option>
+                                    <option value="0">Para comer en restaurante</option>
+                                    <option value="0">Para llevar</option>
+                                    <option value="45">Envio a domicilio - costo extra de L.45.00</option>
                                 </select>
                             </div>
                         </div>
@@ -169,12 +182,34 @@
                         </div>
                         <!--Boton de compra-->
                         <div class="py-2 d-flex justify-content-center">
-                            <button type="submit" class="btn btn-success"><i class="bi bi-piggy-bank-fill px-1"></i>Realizar compra</button>
+                            <button type="submit" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#modal-factura"><i class="bi bi-piggy-bank-fill px-1"></i>Realizar compra</button>
                         </div>
 
                     </form>
                 </div>
             </section>
+
+            <!--Sección de factura digital-->
+            <?php if(!(empty($nombre))): ?>
+            <section class="py-4 d-flex justify-content-center">
+                <div class="container p-2 border w-50 shadow-lg rounded-2">
+                    <div class="bg-success w-100 text-light">
+                        <div class="text-center">
+                            <h4 class="fw-bold">Última factura registrada</h4>
+                        </div>
+                    </div>
+                    <div class="text-center fs-5 border">
+                        <h5 class="fw-bold fs-2">Factura digital</h5><br>
+                        <p>Cliente: <?= $nombre ?></p><br>
+                        <p>Teléfono: <?= $telefono ?></p><br>
+                        <p>Producto: <?= $producto ?></p><br>
+                        <p>Cantidad: <?= $cantidad ?></p><br>
+                        <p>Total a pagar: <?= number_format($total, 2) ?></p><br>
+                    </div>
+                </div>
+            </section>
+            <?php endif; ?>
+
         </main>
 
         <!--Footer-->

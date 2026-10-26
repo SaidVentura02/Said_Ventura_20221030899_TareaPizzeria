@@ -107,7 +107,7 @@
                                 <td><?= $orden["usuario"] ?></td>
                                 <td><?= $orden["telefono"] ?></td>
                                 <td><?= $orden["cantidad"] ?>X<?= $orden["producto"] ?></td>
-                                <td><?= $orden["totalPagar"] ?></td>
+                                <td><?= number_format($orden["totalPagar"],2) ?></td>
                                 <td><span class="badge rounde-pill bg-success py-1">Confirmado</span></td>
                             <tr>
                             <?php endforeach; ?>
@@ -116,9 +116,11 @@
                         </table>
                     </div>
 
+                    <?php if(empty($_SESSION['pedidos'])): ?>
                     <div class="d-flex justify-content-center fs-5 py-2">
                         <span class="badge rounded-pill bg-danger">No hay pedidos recientes</span>
                     </div>
+                    <?php endif; ?>
                     <!--Boton de limpieza-->
                     <div class="py-2 d-flex justify-content-center">
                         <form action="contacto.php" method="POST">

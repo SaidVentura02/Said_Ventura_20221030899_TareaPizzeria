@@ -17,6 +17,9 @@
    $_SESSION['iniciado'] = true;
 
    if(!(empty($nombre))){
+    $_SESSION['usuario'] = $nombre;
+    $_SESSION['telefono'] = $telefono;
+
     $arrayDetalles = explode("-", $detalles);
     $producto = $arrayDetalles[0];
     $precio = intval($arrayDetalles[1]);
@@ -156,6 +159,7 @@
                             <div class="mb-3">
                                 <label for="input-cantidad" class="form-label">Cantidad deseada</label>
                                 <input type="number" class="form-control" name="inputCantidad" id="input-cantidad" min="1" required>
+                                <span class="badge rounded-pill fs-6 mt-1 bg-warning">Se aplica un 10% de descuento en pedidos de 3 o más unidades</span>
                             </div>
                         </div>
                         <!--Modalidad de entrega-->
@@ -182,7 +186,7 @@
                         </div>
                         <!--Boton de compra-->
                         <div class="py-2 d-flex justify-content-center">
-                            <button type="submit" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#modal-factura"><i class="bi bi-piggy-bank-fill px-1"></i>Realizar compra</button>
+                            <button type="submit" class="btn btn-success"><i class="bi bi-piggy-bank-fill px-1"></i>Realizar compra</button>
                         </div>
 
                     </form>

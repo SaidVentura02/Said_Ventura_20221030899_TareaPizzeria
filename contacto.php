@@ -107,7 +107,7 @@
                                 <td><?= $orden["usuario"] ?></td>
                                 <td><?= $orden["telefono"] ?></td>
                                 <td><?= $orden["cantidad"] ?>X<?= $orden["producto"] ?></td>
-                                <td><?= number_format($orden["totalPagar"],2) ?></td>
+                                <td>L.<?= number_format($orden["totalPagar"],2) ?></td>
                                 <td><span class="badge rounde-pill bg-success py-1">Confirmado</span></td>
                             <tr>
                             <?php endforeach; ?>

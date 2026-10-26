@@ -1,3 +1,24 @@
+ <?php
+ session_start();
+
+   $_SESSION['iniciado'] = true;
+
+   $crearPizza = htmlspecialchars(trim($_POST['crear-pizza'] ?? ''), ENT_QUOTES, 'UTF-8');
+    if(!(empty($crearPizza))){
+        if(!(empty($nombre))){
+        $nombre = $_SESSION['usuario'];
+        $telefono = $_SESSION['telefono'];
+        } else {
+            $nombre = "CLIENTE";
+            $telefono = "VACIO";
+        }
+
+        $cod = random_int(111, 999);
+        $orden = ["codigo" => "COD-".$cod, "usuario" => $nombre, "telefono" => $telefono, "producto" => "Personalizada", "cantidad" => 1, "totalPagar" => 200];
+        $_SESSION['pedidos'][] = $orden;
+    }
+?>
+
 <!DOCTYPE html>
 <html lang="es">
     <head>
@@ -38,7 +59,7 @@
                         <h2>Arma tu pizza a tu gusto</h2>
                     </div>
 
-                    <form action="#" method="post" enctype="multipart/form-data">
+                    <form action="arma_pizza.php" method="post">
                         <!--Tipo de masa-->
                         <div class="p-2">
                             <h4>Tipo de masa</h4>
@@ -134,7 +155,8 @@
                         </div>
                         <!--Boton pedido de pizza-->
                         <div class="py-2 d-flex justify-content-center">
-                            <button type="button" class="btn btn-success"><i class="bi bi-basket px-1"></i>Realizar pedido</button>
+                            <input type="hidden" name="crear-pizza">
+                            <button type="submit" value="1" name="crear-pizza" class="btn btn-success"><i class="bi bi-basket px-1"></i>Realizar pedido</button>
                         </div>
 
                     </form>

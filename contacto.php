@@ -1,3 +1,14 @@
+<?php 
+    session_start();
+    if (!isset($_SESSION['iniciado']));
+
+    $limpieza = htmlspecialchars(trim($_POST['limpieza'] ?? ''), ENT_QUOTES, 'UTF-8');
+    if(!(empty($limpieza))){
+        unset($_SESSION['pedidos']);
+    }
+
+?>
+
 <!DOCTYPE html>
 <html lang="es">
     <head>
@@ -89,13 +100,31 @@
                             </tr>
                         </thead>
                         <tbody>
-                            
+                            <?php if(!(empty($_SESSION['pedidos']))): ?>
+                            <?php foreach($_SESSION['pedidos'] as $orden): ?>
+                            <tr>
+                                <td><?= $orden["codigo"] ?></td>
+                                <td><?= $orden["usuario"] ?></td>
+                                <td><?= $orden["telefono"] ?></td>
+                                <td><?= $orden["cantidad"] ?>X<?= $orden["producto"] ?></td>
+                                <td><?= $orden["totalPagar"] ?></td>
+                                <td><span class="badge rounde-pill bg-success py-1">Confirmado</span></td>
+                            <tr>
+                            <?php endforeach; ?>
+                            <?php endif; ?>
                         </tbody>
                         </table>
                     </div>
 
                     <div class="d-flex justify-content-center fs-5 py-2">
                         <span class="badge rounded-pill bg-danger">No hay pedidos recientes</span>
+                    </div>
+                    <!--Boton de limpieza-->
+                    <div class="py-2 d-flex justify-content-center">
+                        <form action="contacto.php" method="POST">
+                            <input type="hidden" name="limpiar">
+                            <button type="submit" value="1" name="limpieza" class="btn btn-danger"><i class="bi bi-trash"></i>Eliminar pedidos</button>
+                        </form>
                     </div>
                 </div>
             </section>

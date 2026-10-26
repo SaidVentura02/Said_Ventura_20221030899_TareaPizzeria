@@ -1,3 +1,44 @@
+<?php 
+    session_start();
+
+
+   $nombre = htmlspecialchars(trim($_POST['inputNombre'] ?? ''), ENT_QUOTES, 'UTF-8');
+   $rtn = htmlspecialchars(trim($_POST['inputRTN'] ?? ''), ENT_QUOTES, 'UTF-8');
+   $telefono = htmlspecialchars(trim($_POST['inputTel'] ?? ''), ENT_QUOTES, 'UTF-8');
+   $email = htmlspecialchars(trim($_POST['inputEmail'] ?? ''), ENT_QUOTES, 'UTF-8');
+   $direccion = htmlspecialchars(trim($_POST['inputDir'] ?? ''), ENT_QUOTES, 'UTF-8');
+
+   $detalles = htmlspecialchars(trim($_POST['inputProducto'] ?? ''), ENT_QUOTES, 'UTF-8');
+
+   $cantidad = intval(htmlspecialchars(trim($_POST['inputCantidad'] ?? ''), ENT_QUOTES, 'UTF-8'));
+   $entrega = htmlspecialchars(trim($_POST['inputEntrega'] ?? ''), ENT_QUOTES, 'UTF-8');
+   $pago = htmlspecialchars(trim($_POST['inputPago'] ?? ''), ENT_QUOTES, 'UTF-8');
+
+   $_SESSION['iniciado'] = true;
+
+   if(!(empty($nombre))){
+    $arrayDetalles = explode("-", $detalles);
+    $producto = $arrayDetalles[0];
+    $precio = intval($arrayDetalles[1]);
+
+    $subtotal = $precio * $cantidad;
+    $impuestoAgregado = $subtotal * 0.15;
+    $total = $subtotal + $impuestoAgregado;
+
+    if($cantidad >= 3){
+        $total = $total - ($total * 0.10);
+    }
+    
+    $cod = random_int(111, 999);
+
+   $orden = ["codigo" => "COD-".$cod, "usuario" => $nombre, "telefono" => $telefono, "producto" => $producto, "cantidad" => $cantidad, "totalPagar" => $total];
+   $_SESSION['pedidos'][] = $orden;
+   }
+   
+   
+
+?>
+
 <!DOCTYPE html>
 <html lang="es">
     <head>
@@ -37,7 +78,7 @@
                         <h2>Ingresa tus datos para completar tu compra</h2>
                     </div>
 
-                    <form action="#" method="post" enctype="multipart/form-data">
+                    <form action="pedidos.php" method="post">
                         <!--Nombre y apellido-->
                         <div class="p-2 w-50">
                             <div class="mb-3">
@@ -73,6 +114,37 @@
                                 <input type="text" class="form-control" name="inputDir" id="input-dir" placeholder="colonia x, sector x, calle x" required>
                             </div>
                         </div>
+                        <!--Selección de producto-->
+                        <div class="p-2 w-50">
+                            <div class="mb-3">
+                                <label for="input-producto" class="form-label">Seleccione el producto</label>
+                                <select class="form-select" name="inputProducto" id="input-producto" required>
+                                    <option value="Margarita Personal-85">Pizza margarita personal</option>
+                                    <option value="Margarita Mediana-105">Pizza margarita mediana</option>
+                                    <option value="Margarita Familiar-125">Pizza margarita familiar</option>
+                                    <option value="Margarita Gigante-155">Pizza margarita gigante</option>
+                                    <option value="Pepperoni Personal-99">Pizza pepperoni personal</option>
+                                    <option value="Pepperoni Mediana-119">Pizza pepperoni mediana</option>
+                                    <option value="Pepperoni Familiar-139">Pizza pepperoni familiar</option>
+                                    <option value="Pepperoni Gigante-169">Pizza pepperoni gigante</option>
+                                    <option value="Hawaiana Personal-105">Pizza hawaiana personal</option>
+                                    <option value="Hawaiana Mediana-125">Pizza hawaiana mediana</option>
+                                    <option value="Hawaiana Familiar-145">Pizza hawaiana familiar</option>
+                                    <option value="Hawaiana Gigante-175">Pizza hawaiana gigante</option>
+                                    <option value="4 Quesos Personal-109">Pizza 4 quesos personal</option>
+                                    <option value="4 Quesos Mediana-129">Pizza 4 quesos mediana</option>
+                                    <option value="4 Quesos Familiar-149">Pizza 4 quesos familiar</option>
+                                    <option value="4 Quesos Gigante-179">Pizza 4 quesos gigante</option>
+                                </select>
+                            </div>
+                        </div>
+                        <!--Selección de cantidad-->
+                        <div class="p-2 w-50">
+                            <div class="mb-3">
+                                <label for="input-cantidad" class="form-label">Cantidad deseada</label>
+                                <input type="number" class="form-control" name="inputCantidad" id="input-cantidad" min="1" required>
+                            </div>
+                        </div>
                         <!--Modalidad de entrega-->
                         <div class="p-2 w-50">
                             <div class="mb-3">
@@ -80,7 +152,7 @@
                                 <select class="form-select" name="inputEntrega" id="input-entrega" required>
                                     <option>Para comer en restaurante</option>
                                     <option>Para llevar</option>
-                                    <option>Envio a domicilio</option>
+                                    <option>Envio a domicilio - costo extra de L.45.00</option>
                                 </select>
                             </div>
                         </div>
@@ -97,7 +169,7 @@
                         </div>
                         <!--Boton de compra-->
                         <div class="py-2 d-flex justify-content-center">
-                            <button type="button" class="btn btn-success"><i class="bi bi-piggy-bank-fill px-1"></i>Realizar compra</button>
+                            <button type="submit" class="btn btn-success"><i class="bi bi-piggy-bank-fill px-1"></i>Realizar compra</button>
                         </div>
 
                     </form>
